@@ -7,10 +7,14 @@ fun main(args: Array<String>) {
         if(line.isNullOrEmpty())
             return;
 
-        if(line == "1 + 2 + 3") {
-            println("?")
-        } else {
-            println("ERROR")
+        val lexer = Lexer(line)
+        while (true) {
+            val token = lexer.nextToken()
+            if(token.syntaxKind == SyntaxKind.EndOfFileToken)
+                break;
+
+            println("${token.syntaxKind}: ${token.text} => ${token.value}")
+
         }
     }
 }
