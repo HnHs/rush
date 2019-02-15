@@ -65,7 +65,7 @@ class Lexer(private val text: String) {
         val length = position - start
         val tokenText = text.substring(start, (start + length))
 
-        return SyntaxToken(WhiteSpaceToken, start, tokenText, "")
+        return SyntaxToken(WhiteSpaceToken, start, tokenText, String.empty)
     }
 
     private fun nextDigitToken(): SyntaxToken {

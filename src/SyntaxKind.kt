@@ -10,5 +10,7 @@ enum class SyntaxKind {
     OpenParenthesisToken,
     CloseParenthesisToken,
     BadToken,
-    EndOfFileToken
+    EndOfFileToken,
+    NumberExpression,
+    BinaryExpression
 }
