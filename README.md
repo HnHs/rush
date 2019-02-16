@@ -1,6 +1,6 @@
 # RUSH
 
-## ESTUDAR
+## BOM ESTUDAR
 
 * Estudar funcional:
     * Elixir
@@ -8,12 +8,20 @@
 * Compiladores em geral
     * Todos os passos
 * Videos
-    * [Immo Landwerth](https://www.youtube.com/playlist?list=PLRAdsfhKI4OWNOSfS7EUu5GRAVmze1t2y)
+    
 * Kotlin
-
-
 
 ## Checkin
 
-* 16/02/19 (1h)
+* ~~16/02/19 (21h)~~
+* 23/02/19 19h
 
+
+## ROADMAP
+
+* Terminar primeiro video do Immo Lendwerth
+* Pesquisar um artigo/livro sobre compiladores
+
+## Links relacionados
+
+* [Immo Landwerth](https://www.youtube.com/playlist?list=PLRAdsfhKI4OWNOSfS7EUu5GRAVmze1t2y)
