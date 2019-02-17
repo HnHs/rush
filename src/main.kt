@@ -32,7 +32,7 @@ fun main(args: Array<String>) {
 
         pprint(expressionSyntax);
 
-//        if (parser.diagnostics.any())
-//            parser.diagnostics.forEach { println(it) }
+        if (parser.diagnostics.any())
+            parser.diagnostics.forEach { println(it) }
     }
 }
