@@ -31,5 +31,8 @@ fun main(args: Array<String>) {
         var expressionSyntax = parser.parse()
 
         pprint(expressionSyntax);
+
+//        if (parser.diagnostics.any())
+//            parser.diagnostics.forEach { println(it) }
     }
 }

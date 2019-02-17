@@ -7,8 +7,9 @@ class Parser {
     private val tokens = mutableListOf<SyntaxToken>()
     private var position: Int = 0
     private val current: SyntaxToken get() = peek(0)
+    val diagnostics: MutableList<String> = mutableListOf()
 
-    public constructor(text: String) {
+    constructor(text: String) {
         val lexer = Lexer(text);
         var token: SyntaxToken
         do {
@@ -18,6 +19,8 @@ class Parser {
                     token.syntaxKind != BadToken)
                 tokens.add(token)
         } while (token.syntaxKind != EndOfFileToken)
+
+        diagnostics.addAll(lexer.diagnostics)
     }
 
     public fun parse(): ExpressionSyntax {
@@ -48,6 +51,7 @@ class Parser {
         if (current.syntaxKind == kind)
             return next()
 
+        diagnostics.add("ERROR: Unex[ected token <${current.syntaxKind}>, expected<$kind>")
         return SyntaxToken(kind, current.position, String.empty, null)
     }
 

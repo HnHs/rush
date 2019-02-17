@@ -5,6 +5,7 @@ import rush.SyntaxKind.*
 class Lexer(private val text: String) {
     private val eof: Char = '\u0000'
     private var position: Int = 0;
+    val diagnostics: MutableList<String> = mutableListOf()
 
     private val current: Char
         get() {
@@ -51,6 +52,7 @@ class Lexer(private val text: String) {
             return SyntaxToken(CloseParenthesisToken, position++, ")", null)
         }
 
+        diagnostics.add("EOOR: bad char input $current")
         return SyntaxToken(BadToken, position++, text.substring(position - 1, position), null)
 
     }
