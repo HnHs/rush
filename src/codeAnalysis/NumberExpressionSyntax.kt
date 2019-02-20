@@ -1,6 +1,6 @@
-package rush
+package codeAnalysis
 
-import rush.SyntaxKind.*
+import codeAnalysis.SyntaxKind.*
 
 class NumberExpressionSyntax(val numberToken: SyntaxToken) : ExpressionSyntax() {
     override val syntaxKind: SyntaxKind = NumberExpression

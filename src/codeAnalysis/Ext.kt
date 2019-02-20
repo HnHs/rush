@@ -1,3 +1,3 @@
-package rush
+package codeAnalysis
 
 val String.Companion.empty: String get() = ""

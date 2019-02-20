@@ -1,4 +1,4 @@
-package rush
+package codeAnalysis
 
 enum class SyntaxKind {
     NumberToken,
@@ -12,5 +12,6 @@ enum class SyntaxKind {
     BadToken,
     EndOfFileToken,
     NumberExpression,
-    BinaryExpression
+    BinaryExpression,
+    ParenthesizedExpression
 }

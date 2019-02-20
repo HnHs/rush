@@ -1,6 +1,6 @@
-package rush
+package codeAnalysis
 
-import rush.SyntaxKind.*
+import codeAnalysis.SyntaxKind.*
 
 class Lexer(private val text: String) {
     private val eof: Char = '\u0000'
@@ -80,7 +80,13 @@ class Lexer(private val text: String) {
         val length = position - start
         val tokenText = text.substring(start, (start + length))
 
-        return SyntaxToken(NumberToken, start, tokenText, tokenText.toInt())
+        var value = tokenText.toIntOrNull()
+
+        if (value == null) {
+            diagnostics.add("The number $text is not a valid number")
+        }
+
+        return SyntaxToken(NumberToken, start, tokenText, value)
     }
 
     private fun next() {

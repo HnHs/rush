@@ -1,6 +1,6 @@
-package rush
+package codeAnalysis
 
-import rush.SyntaxKind.*
+import codeAnalysis.SyntaxKind.*
 
 class Parser {
 
@@ -23,11 +23,30 @@ class Parser {
         diagnostics.addAll(lexer.diagnostics)
     }
 
-    public fun parse(): ExpressionSyntax {
-        var left = parsePrimaryExpression();
+    fun parse(): SyntaxTree {
+        var expression = parseTerm()
+        var endOfFileToken = match(EndOfFileToken)
+        return SyntaxTree(diagnostics, expression, endOfFileToken)
+    }
+
+    private fun parseTerm(): ExpressionSyntax {
+        var left = parseFactor();
 
         while (current.syntaxKind == PlusToken ||
                 current.syntaxKind == MinusToken) {
+            val operatorToken = next()
+            val right = parseFactor()
+            left = BinaryExpressionSyntax(left, operatorToken, right)
+        }
+
+        return left
+    }
+
+    private fun parseFactor(): ExpressionSyntax {
+        var left = parsePrimaryExpression();
+
+        while (current.syntaxKind == StarToken ||
+                current.syntaxKind == SlashToken) {
             val operatorToken = next()
             val right = parsePrimaryExpression()
             left = BinaryExpressionSyntax(left, operatorToken, right)
@@ -36,7 +55,17 @@ class Parser {
         return left
     }
 
+    private fun parseExpression(): ExpressionSyntax = parseTerm()
+
     private fun parsePrimaryExpression(): ExpressionSyntax {
+
+        if (current.syntaxKind == OpenParenthesisToken) {
+            val left = next()
+            val expression = parseExpression()
+            val right = match(CloseParenthesisToken)
+            return ParenthesizedExpressionSyntax(left, expression, right)
+        }
+
         val numberToken = match(NumberToken)
         return NumberExpressionSyntax(numberToken)
     }
@@ -51,7 +80,7 @@ class Parser {
         if (current.syntaxKind == kind)
             return next()
 
-        diagnostics.add("ERROR: Unex[ected token <${current.syntaxKind}>, expected<$kind>")
+        diagnostics.add("ERROR: Unexected token <${current.syntaxKind}>, expected<$kind>")
         return SyntaxToken(kind, current.position, String.empty, null)
     }
 

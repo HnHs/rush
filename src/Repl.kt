@@ -1,4 +1,7 @@
-package rush
+import codeAnalysis.Evaluator
+import codeAnalysis.SyntaxNode
+import codeAnalysis.SyntaxToken
+import codeAnalysis.SyntaxTree
 
 fun pprint(syntaxNode: SyntaxNode, indent: String = "", isLast: Boolean = true) {
 
@@ -20,19 +23,31 @@ fun pprint(syntaxNode: SyntaxNode, indent: String = "", isLast: Boolean = true) 
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
+    var showTree = false
+
     while (true) {
         print("> ")
         val line = readLine()
         if (line.isNullOrEmpty())
             return;
 
-        val parser = Parser(line)
-        var expressionSyntax = parser.parse()
+        if (line == "#showTree") {
+            showTree = !showTree
+            println(if (showTree) "Showing parse tree" else "Hiding parse tree")
+            continue
+        }
 
-        pprint(expressionSyntax);
+        var syntaxTree = SyntaxTree.parse(line)
 
-        if (parser.diagnostics.any())
-            parser.diagnostics.forEach { println(it) }
+        if (showTree) pprint(syntaxTree.root);
+
+        if (syntaxTree.diagnostics.any())
+            syntaxTree.diagnostics.forEach { println(it) }
+        else {
+            var result = Evaluator(syntaxTree.root).eval()
+            println("= $result")
+
+        }
     }
 }

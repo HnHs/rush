@@ -1,4 +1,4 @@
-package rush
+package codeAnalysis
 
 class SyntaxToken(override val syntaxKind: SyntaxKind, val position: Int, val text: String, val value: Any?)
     : SyntaxNode() {

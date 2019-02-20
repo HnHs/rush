@@ -1,4 +1,4 @@
-package rush
+package codeAnalysis
 
 abstract class ExpressionSyntax : SyntaxNode() {
 
