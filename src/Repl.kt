@@ -3,26 +3,6 @@ import codeAnalysis.SyntaxNode
 import codeAnalysis.SyntaxToken
 import codeAnalysis.SyntaxTree
 
-fun pprint(syntaxNode: SyntaxNode, indent: String = "", isLast: Boolean = true) {
-
-    val marker = if (isLast) "└──" else "├──"
-
-    print("$indent$marker${syntaxNode.syntaxKind}")
-
-    if (syntaxNode is SyntaxToken && syntaxNode.value != null) {
-        print(" ${syntaxNode.value}")
-    }
-
-    println()
-
-    val newIdent = "$indent${if (isLast) "    " else "│   "}"
-
-    var lastChild = syntaxNode.getChildren().lastOrNull()
-    for (child in syntaxNode.getChildren()) {
-        pprint(child, newIdent, child === lastChild)
-    }
-}
-
 fun main() {
     var showTree = false
 
@@ -49,5 +29,25 @@ fun main() {
             println("= $result")
 
         }
+    }
+}
+
+fun pprint(syntaxNode: SyntaxNode, indent: String = "", isLast: Boolean = true) {
+
+    val marker = if (isLast) "└──" else "├──"
+
+    print("$indent$marker${syntaxNode.syntaxKind}")
+
+    if (syntaxNode is SyntaxToken && syntaxNode.value != null) {
+        print(" ${syntaxNode.value}")
+    }
+
+    println()
+
+    val newIdent = "$indent${if (isLast) "    " else "│   "}"
+
+    var lastChild = syntaxNode.getChildren().lastOrNull()
+    for (child in syntaxNode.getChildren()) {
+        pprint(child, newIdent, child === lastChild)
     }
 }
