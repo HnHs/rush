@@ -10,6 +10,7 @@
 * Videos
     
 * Kotlin
+   * [Exemplos e básico da sintax](https://try.kotlinlang.org/#/Examples/Basic%20syntax%20walk-through/Use%20a%20conditional%20expression/Use%20a%20conditional%20expression.kt)
 
 ## Checkin
 
