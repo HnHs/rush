@@ -9,7 +9,7 @@
       * [Elixir School](https://elixirschool.com/en/)
 * JVM
    * [JIT](https://aboullaite.me/understanding-jit-compiler-just-in-time-compiler/)
-   * [CLR vcs JVM](https://blog.overops.com/clr-vs-jvm-how-the-battle-between-net-and-java-extends-to-the-vm-level/)
+   * [CLR vs JVM](https://blog.overops.com/clr-vs-jvm-how-the-battle-between-net-and-java-extends-to-the-vm-level/)
    
 * Compiladores em geral
     * Todos os passos
