@@ -33,4 +33,4 @@
 ## Links relacionados
 
 * [Immo Landwerth](https://www.youtube.com/playlist?list=PLRAdsfhKI4OWNOSfS7EUu5GRAVmze1t2y)
-* [Livro - Engineering a Compiler](https://www.amazon.com/Engineering-Compiler-Keith-Cooper-ebook-dp-B00J5AS70G/dp/B00J5AS70G/ref=mt_kindle?_encoding=UTF8&me=&qid=)
+* [Livro - Engineering a Compiler](https://www.amazon.com/Engineering-Compiler-Keith-Cooper-ebook-dp-B00J5AS70G/dp/B00J5AS70G/ref=mt_kindle?_encoding=UTF8&me=&qid=) ([pdf](https://bit.ly/2TbybbK)◉_◉)
