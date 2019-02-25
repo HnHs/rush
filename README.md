@@ -12,7 +12,8 @@
    * [CLR vs JVM](https://blog.overops.com/clr-vs-jvm-how-the-battle-between-net-and-java-extends-to-the-vm-level/)
    
 * Compiladores em geral
-    * Todos os passos
+    * [Gramatica do kotlin](http://kotlinlang.org/docs/reference/grammar.html) e [Spec](https://github.com/JetBrains/kotlin-spec/tree/spec-rework/src/grammar)
+    * [Antlr para construca de linguagem](https://www.antlr.org/)
 * Videos
     
 * Kotlin
