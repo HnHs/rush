@@ -4,7 +4,13 @@
 
 * Estudar funcional:
     * Elixir
+      * [Intro](https://elixir-lang.org/getting-started/introduction.html) 
+      * [Learn](https://github.com/dwyl/learn-elixir)
+      * [Elixir School](https://elixirschool.com/en/)
 * JVM
+   * [JIT](https://aboullaite.me/understanding-jit-compiler-just-in-time-compiler/)
+   * [CLR vcs JVM](https://blog.overops.com/clr-vs-jvm-how-the-battle-between-net-and-java-extends-to-the-vm-level/)
+   
 * Compiladores em geral
     * Todos os passos
 * Videos
@@ -15,7 +21,7 @@
 ## Checkin
 
 * ~~16/02/19 (21h)~~
-* 23/02/19 19h
+* 24/02/19 22h
 
 
 ## ROADMAP
