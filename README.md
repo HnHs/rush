@@ -22,13 +22,13 @@
 ## Checkin
 
 * ~~16/02/19 (21h)~~
-* 24/02/19 22h
-
+* ~~24/02/19 (22h)~~
+* 03/03/19 (20h)
 
 ## ROADMAP
 
-* Terminar primeiro video do Immo Lendwerth
-* Pesquisar um artigo/livro sobre compiladores
+* estudar pattern matching
+* gerar gramatica para expressao simples em Antlr
 
 ## Links relacionados
 
